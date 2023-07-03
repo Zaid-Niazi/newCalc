@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Invoice Late Fee Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="toggle-clear-container">
+      <input type="checkbox" id="toggleClear" class="toggle-clear-switch">
+      <label for="toggleClear" class="toggle-clear-label"></label>
+    </div>
+    <input type="number" id="amount" class="input-box" placeholder="Enter amount" autofocus>
+    <input type="number" id="days" class="input-box" placeholder="Enter days">
+    <div id="result" class="result">Result</div>    
+    <button id="clear" class="button">Clear</button>
+    <div class="toggle-container">
+      <button id="toggleBtn" class="toggle-btn">Calculation Method <span id="arrow">▼</span></button>
+      <p id="formula" class="formula">Late fee = (Amount*12/100)*(Days/365) + (Amount*12/100)*(Days/365)*18/100</p>
+    </div>
+  </div>
+  <div class="creator-toggle">
+    <input type="checkbox" id="creatorToggle" class="creator-toggle-switch">
+    <label for="creatorToggle" class="creator-toggle-label"></label>
+    <div id="creatorInfo" class="creator-info">By Zaid Niazi (abuzaid.niazi@licindia.com)</div>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
