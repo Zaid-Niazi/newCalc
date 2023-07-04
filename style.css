@@ -274,18 +274,18 @@ h1 {
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 5px 4.5px 0 4.5px;
+  border-width: 20px 15px 10px 15px;
   border-color: #000 transparent transparent transparent;
   cursor: pointer;
 }
 
 .creator-info {
   position: absolute;
-  bottom: 30px;
+  bottom: 50px;
   left: 50%;
   transform: translateX(-50%);
   color: #000;
-  font-size: 14px;
+  font-size: 20px;
   opacity: 0;
   transition: opacity 0.3s ease;
   white-space: nowrap;
@@ -300,53 +300,49 @@ h1 {
 }
 
 
-/* Existing CSS */
 
-/* ... all of your existing CSS ... */
-
-/* Responsive CSS for devices with width less than or equal to 600px */
 
 @media screen and (max-width: 600px) {
   body {
-    font-size: 14px; /* Adjust as necessary */
+    font-size: 14px; 
   }
 
   .container {
-    padding: 20px; /* Reduce padding */
+    padding: 20px; 
     width: 100%;
     height: 100%;
   }
 
   h1 {
-    font-size: 1.5em; /* Reduce font size */
+    font-size: 1.5em; 
   }
 
   .input-box {
-    height: 50px; /* Reduce height */
-    font-size: 30px; /* Reduce font size */
+    height: 50px; 
+    font-size: 30px; 
   }
 
   .result, .delay {
-    font-size: 20px; /* Reduce font size */
-    min-height: 50px; /* Reduce min-height */
+    font-size: 20px; 
+    min-height: 50px; 
   }
 
   #invoiceNumber, #printBtn {
-    padding: 10px 20px; /* Reduce padding */
-    font-size: 14px; /* Reduce font size */
+    padding: 10px 20px; 
+    font-size: 14px; 
   }
 
   .button {
-    padding: 20px; /* Reduce padding */
-    font-size: 30px; /* Reduce font size */
+    padding: 20px; 
+    font-size: 30px; 
   }
 
   .toggle-btn {
-    font-size: 12px; /* Reduce font size */
+    font-size: 12px; 
   }
 
   .formula {
-    font-size: 10px; /* Reduce font size */
+    font-size: 10px; 
   }
 }
 
