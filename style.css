@@ -265,6 +265,7 @@ h1 {
   z-index: 1;
 }
 
+
 .creator-toggle-switch {
   display: none;
 }
@@ -349,6 +350,7 @@ h1 {
 label {
   display: block;
   font-weight: bold;
+  font-size: 20px;
   margin-bottom: 5px;
   color: #000;
 }

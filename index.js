@@ -15,6 +15,7 @@ const dueDate = document.querySelector('#dueDate');
 
 let daysVal, primaryLateFee, secondaryFee, finalResults;
 
+
 //date
 
 let todaysDate = document.getElementById("today");
