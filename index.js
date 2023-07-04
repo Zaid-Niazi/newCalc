@@ -15,8 +15,21 @@ const dueDate = document.querySelector('#dueDate');
 
 let daysVal, primaryLateFee, secondaryFee, finalResults;
 
-//date
+// Function to count number of weekdays between two dates
+function countWeekdays(start, end) {
+  var totalDays = Math.round((end - start) / (1000 * 60 * 60 * 24));
+  var wholeWeeks = totalDays / 7 | 0;
+  var extraDays = totalDays % 7;
+  var firstDayOfWeek = start.getDay();
+  var weekdays = wholeWeeks * 5;
 
+  if (firstDayOfWeek == 0) --firstDayOfWeek;
+  weekdays += (firstDayOfWeek + extraDays < 6 ? extraDays : 5) - (firstDayOfWeek < 0 ? -1 : firstDayOfWeek > 5 ? 5 : firstDayOfWeek);
+
+  return weekdays;
+}
+
+//date
 let todaysDate = document.getElementById("today");
 let dateWarning = document.getElementById("dateWarning");
 
@@ -90,8 +103,7 @@ function calc(event){
 
     let dueDateVal = new Date(dueDate.value);
     let todayVal = new Date(document.getElementById("today").value);
-    let timeDiff = todayVal - dueDateVal;
-    daysVal = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+    daysVal = countWeekdays(dueDateVal, todayVal);
 
     primaryLateFee = (amt * 12 / 100) * (daysVal / 365);   // core logic
     secondaryFee = primaryLateFee * 18 / 100;
