@@ -11,9 +11,16 @@
       <label for="toggleClear" class="toggle-clear-label"></label>
     </div>
     <input type="number" id="amount" class="input-box" placeholder="Enter amount" autofocus>
-    <input type="number" id="days" class="input-box" placeholder="Enter days">
-    <div id="result" class="result">Result</div>    
-    <button id="clear" class="button">Clear</button>
+    <input type="date" id="dueDate" class="input-box" placeholder="Enter due date">
+    <input type="date" id="today" class="input-box" placeholder="Today's date">
+      <div id="totalResult" class="result">Result</div> 
+      <div id="lateFee" class="delay">Fee on delay</div> 
+      <div id="GST" class="delay">GST on late fee</div> 
+      <input type="text" id="invoiceNumber" class="" placeholder="Invoice Number (Optional)" style="display: none;">
+
+     <button id="printBtn" style="display: none;">Print Calculation</button>
+
+     <button id="clear" class="button">Clear</button>
     <div class="toggle-container">
       <button id="toggleBtn" class="toggle-btn">Calculation Method <span id="arrow">▼</span></button>
       <p id="formula" class="formula">Late fee = (Amount*12/100)*(Days/365) + (Amount*12/100)*(Days/365)*18/100</p>
@@ -24,6 +31,6 @@
     <label for="creatorToggle" class="creator-toggle-label"></label>
     <div id="creatorInfo" class="creator-info">By Zaid Niazi (abuzaid.niazi@licindia.com)</div>
   </div>
-  <script src="index.js"></script>
+  <script defer src="index.js"></script>
 </body>
 </html>

@@ -29,6 +29,13 @@ body {
   }
 }
 
+
+@keyframes flashing {
+  0% { border-color: rgb(255, 145, 0); }
+  50% { border-color: none; }
+  100% { border-color: rgb(107, 4, 13); }
+}
+
 h1 {
   text-align: center;
   color: #000;
@@ -40,12 +47,12 @@ h1 {
 .input-box {
   background: #fff;
   width: 95%;
-  height:100px;
+  height:75px;
   text-align: center;
   padding: 10px;
   margin-bottom: 10px;
   border: 2px solid #000;
-  font-size: 75px;
+  font-size: 50px;
   color: #000;
 }
 
@@ -60,13 +67,68 @@ h1 {
   padding: 10px;
   margin-bottom: 10px;
   border: 2px solid #000;
-  font-size: 75px;
+  font-size: 50px;
   color: #474343;
-  min-height: 100px;
+  min-height: 75px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+.delay {
+  background: #fffbfb;
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 2px solid #000;
+  font-size: 25px;
+  color: #474343;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#invoiceNumber {
+
+  width:87.5%;
+  display: none;
+  background-color: #ffffff; /* Green */
+  border: none;
+  color: rgb(0, 0, 0);
+  border : 2px solid black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block ;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition: height 2s;
+
+}
+
+
+#printBtn {
+  width: 98.5%;
+  display: none;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block ;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition: height 2s;
+}
+
+#printBtn.show {
+  display: block;
+}
+
 
 .button {
   width: 99%;
@@ -74,7 +136,7 @@ h1 {
   border: none;
   background-color: #000;
   color: #fff;
-  font-size: 75px;
+  font-size: 50px;
   cursor: pointer;
   margin-bottom: 10px;
   transition: all 0.3s ease;
