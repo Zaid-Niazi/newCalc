@@ -29,7 +29,7 @@ window.onload = function(){
       let mm = String(today.getMonth() + 1).padStart(2, '0'); 
       let yyyy = today.getFullYear();
       let formattedDate = yyyy + '-' + mm + '-' + dd;
-      todaysDate.value = formattedDate;
+      todayInput.value = formattedDate;
       dueDate.max = formattedDate;
   })
   .catch((error) => {
