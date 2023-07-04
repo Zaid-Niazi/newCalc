@@ -12,7 +12,12 @@
     </div>
     <input type="number" id="amount" class="input-box" placeholder="Enter amount" autofocus>
     <input type="date" id="dueDate" class="input-box" placeholder="Enter due date">
-    <input type="date" id="today" class="input-box" placeholder="Today's date">
+    <div>
+      <label for="today"></label>
+      <input type="date" id="today" class="input-box">
+      <div id="dateWarning" style="font-size: 14px;"></div>
+  </div>
+  
       <div id="totalResult" class="result">Result</div> 
       <div id="lateFee" class="delay">Fee on delay</div> 
       <div id="GST" class="delay">GST on late fee</div> 

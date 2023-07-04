@@ -56,6 +56,15 @@ h1 {
   color: #000;
 }
 
+
+#dateWarning {
+  margin-top: 5px;
+  font-style: italic;
+}
+
+
+
+
 .input-box:focus {
   outline: none;
   box-shadow: 0 0 10px #000;
@@ -112,7 +121,7 @@ h1 {
 #printBtn {
   width: 98.5%;
   display: none;
-  background-color: #4CAF50; /* Green */
+  background-color: #4CAF50; 
   border: none;
   color: white;
   padding: 15px 32px;
