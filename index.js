@@ -15,7 +15,6 @@ const dueDate = document.querySelector('#dueDate');
 
 let daysVal, primaryLateFee, secondaryFee, finalResults;
 
-
 //date
 
 let todaysDate = document.getElementById("today");
@@ -35,6 +34,14 @@ window.onload = function(){
   })
   .catch((error) => {
       console.error('Error:', error);
+      // If the API call fails, get the date using new Date() instead.
+      let today = new Date();
+      let dd = String(today.getDate()).padStart(2, '0');
+      let mm = String(today.getMonth() + 1).padStart(2, '0'); 
+      let yyyy = today.getFullYear();
+      let formattedDate = yyyy + '-' + mm + '-' + dd;
+      todayInput.value = formattedDate;
+      dueDate.max = formattedDate;
   });
 
   todaysDate.addEventListener("change", function() {
@@ -69,7 +76,6 @@ window.onload = function(){
       }
   });
 }
-
 
 function clearFields(){
   amount.value = '';
