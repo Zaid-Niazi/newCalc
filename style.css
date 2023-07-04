@@ -298,3 +298,53 @@ h1 {
 .creator-toggle-switch:checked ~ .creator-info {
   opacity: 1;
 }
+
+
+/* Existing CSS */
+
+/* ... all of your existing CSS ... */
+
+/* Responsive CSS for devices with width less than or equal to 600px */
+
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 14px; /* Adjust as necessary */
+  }
+
+  .container {
+    padding: 20px; /* Reduce padding */
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 1.5em; /* Reduce font size */
+  }
+
+  .input-box {
+    height: 50px; /* Reduce height */
+    font-size: 30px; /* Reduce font size */
+  }
+
+  .result, .delay {
+    font-size: 20px; /* Reduce font size */
+    min-height: 50px; /* Reduce min-height */
+  }
+
+  #invoiceNumber, #printBtn {
+    padding: 10px 20px; /* Reduce padding */
+    font-size: 14px; /* Reduce font size */
+  }
+
+  .button {
+    padding: 20px; /* Reduce padding */
+    font-size: 30px; /* Reduce font size */
+  }
+
+  .toggle-btn {
+    font-size: 12px; /* Reduce font size */
+  }
+
+  .formula {
+    font-size: 10px; /* Reduce font size */
+  }
+}
