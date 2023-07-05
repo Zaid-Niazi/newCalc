@@ -45,21 +45,26 @@ window.onload = function(){
   });
 
   todaysDate.addEventListener("change", function() {
-      let todayVal = new Date(todaysDate.value);
-      let currentDateTime = new Date();
-      
-      if (todayVal.getTime() > currentDateTime.getTime()) {
-          dateWarning.textContent = "Future Date Selected";
-          dateWarning.style.color = 'red';
-      } else if (todayVal.getTime() < currentDateTime.getTime()) {
-          dateWarning.textContent = "Past Date Selected";
-          dateWarning.style.color = 'black';
-      } else {
-          dateWarning.textContent = '';
-      }
-      
-      dueDate.max = todaysDate.value; 
+    let todayVal = new Date(todaysDate.value);
+    let currentDateTime = new Date();
+    
+    // Strip the time part from both dates
+    let todayDateOnly = new Date(currentDateTime.getFullYear(), currentDateTime.getMonth(), currentDateTime.getDate());
+    let selectedDateOnly = new Date(todayVal.getFullYear(), todayVal.getMonth(), todayVal.getDate());
+  
+    if (selectedDateOnly.getTime() > todayDateOnly.getTime()) {
+        dateWarning.textContent = "Future Date Selected";
+        dateWarning.style.color = 'red';
+    } else if (selectedDateOnly.getTime() < todayDateOnly.getTime()) {
+        dateWarning.textContent = "Past Date Selected";
+        dateWarning.style.color = 'black';
+    } else {
+        dateWarning.textContent = '';
+    }
+    
+    dueDate.max = todaysDate.value; 
   });
+  
 
 
   dueDate.addEventListener("change", function() {
