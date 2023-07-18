@@ -17,6 +17,8 @@ let daysVal, primaryLateFee, secondaryFee, finalResults;
 
 //date
 
+
+
 let todaysDate = document.getElementById("today");
 let dateWarning = document.getElementById("dateWarning");
 
@@ -34,7 +36,7 @@ window.onload = function(){
   })
   .catch((error) => {
       console.error('Error:', error);
-      // If the API call fails, get the date using new Date() instead.
+
       let today = new Date();
       let dd = String(today.getDate()).padStart(2, '0');
       let mm = String(today.getMonth() + 1).padStart(2, '0'); 
@@ -48,7 +50,6 @@ window.onload = function(){
     let todayVal = new Date(todaysDate.value);
     let currentDateTime = new Date();
     
-    // Strip the time part from both dates
     let todayDateOnly = new Date(currentDateTime.getFullYear(), currentDateTime.getMonth(), currentDateTime.getDate());
     let selectedDateOnly = new Date(todayVal.getFullYear(), todayVal.getMonth(), todayVal.getDate());
   

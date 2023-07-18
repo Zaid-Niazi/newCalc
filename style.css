@@ -354,3 +354,58 @@ label {
   margin-bottom: 5px;
   color: #000;
 }
+
+@media screen and (max-height: 900px) {
+
+  
+  .toggle-clear-label{
+    margin-right: 25px;
+  }
+
+
+   #amount{
+  margin-top: 28px;
+  }
+  .container {
+  
+    padding: 20px; 
+    max-height:100vh;
+    overflow-y: auto;
+  }
+
+  .input-box {
+    height: 35px; 
+    font-size: 24px; 
+  }
+
+  .result, .delay {
+    font-size: 18px; 
+    min-height: 40px; 
+  }
+
+  #invoiceNumber, #printBtn {
+    padding: 8px 16px; 
+    font-size: 12px; 
+  }
+
+  .button {
+    padding: 15px; 
+    font-size: 24px; 
+    height: 50px;
+  }
+
+
+  .creator-info {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #000;
+    font-size: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+  }
+
+
+}
