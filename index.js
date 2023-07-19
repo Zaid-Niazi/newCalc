@@ -17,8 +17,6 @@ let daysVal, primaryLateFee, secondaryFee, finalResults;
 
 //date
 
-
-
 let todaysDate = document.getElementById("today");
 let dateWarning = document.getElementById("dateWarning");
 
@@ -94,36 +92,34 @@ function clearFields(){
   printBtn.style.display = 'none';
 }
 
-
-// logic
-
+// Logic
 function calc(event){
   if(amount.value !== '' && dueDate.value !== '') {
     let amt = Number(amount.value);
-
     let dueDateVal = new Date(dueDate.value);
     let todayVal = new Date(document.getElementById("today").value);
     let timeDiff = todayVal - dueDateVal;
     daysVal = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+    
+    if (dueDateVal.getDay() === 5 && todayVal.getDay() === 1 && daysVal === 3) {
+      // Due date is Friday and receipt date is Monday, count as one day delay
+      daysVal = 1;
+    } else if (dueDateVal.getDay() === 6 && todayVal.getDay() === 0) {
+      // Due date is Saturday and receipt date is Sunday, display a warning
+      totalResult.textContent = 'Off days?';
+      return;
+    }
 
     primaryLateFee = (amt * 12 / 100) * (daysVal / 365);   // core logic
     secondaryFee = primaryLateFee * 18 / 100;
     finalResults = primaryLateFee + secondaryFee;
 
     lateFee.textContent = `Late : ${primaryLateFee.toFixed(2)}`;
-    GST.textContent = `GST :${secondaryFee.toFixed(2)}`;
-    totalResult.textContent = `Total: ${Math.round(finalResults)} (${finalResults.toFixed(2)})`;
-    printBtn.style.display = 'block';
-    invoiceNumber.style.display = 'block'; 
-    invoiceNumber.style.animation = 'fadeInDown 0.5s ease'; 
-  } else if(dueDate.value === '' || amount.value === '') {
-    lateFee.textContent = 'N/A';
-    GST.textContent = 'N/A';
-    totalResult.textContent = 'N/A';
-    invoiceNumber.style.display = 'none'; 
-    printBtn.style.display = 'none';
+    GST.textContent = `GST : ${secondaryFee.toFixed(2)}`;
+    totalResult.textContent = `Total : ${finalResults.toFixed(2)}`;
   }
 }
+
 
 document.getElementById("today").style.animation = "flashing 2s infinite";
 
